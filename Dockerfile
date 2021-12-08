@@ -1,4 +1,4 @@
 FROM quay.io/kushalsamota/centos:latest
 RUN  yum install httpd -y
-RUN  echo "<h1> Hello Everyone 12345678 </h1>" > /var/www/html/index.html
+COPY ./index.html   /var/www/html
 CMD  ["/usr/sbin/httpd","-D","FOREGROUND"]
